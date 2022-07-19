@@ -1,0 +1,129 @@
+@media screen and (max-width: 992px) {
+  .App {
+    nav {
+      .navigation-container {
+        .navigation {
+          ul {
+            position: absolute;
+            display: none;
+            height: 100vh;
+            width: 0;
+            background-color: #112233fd;
+            right: 0;
+            top: 60px;
+            z-index: 2;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 120px;
+          }
+        }
+
+        .contact-us {
+          display: none;
+        }
+
+        .nav-toggle {
+          height: 32px;
+          width: 32px;
+          display: flex;
+          justify-content: flex-start;
+          cursor: pointer;
+          .hamburger {
+            position: relative;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            // width: 100%;
+          }
+          .hamburger::before {
+            content: "";
+            position: absolute;
+            width: 32px;
+            height: 2px;
+            background: #fff;
+            transform: translateY(-10px);
+            transition: 0.5s;
+          }
+
+          .hamburger::after {
+            content: "";
+            position: absolute;
+            width: 32px;
+            height: 2px;
+            background: #fff;
+            transform: translateY(10px);
+            transition: 0.5s;
+            /* garis tengah itu shadownya konten ini */
+            box-shadow: 0 -10px#fff;
+          }
+        }
+      }
+
+      .navigation-container.active .nav-toggle .hamburger::before {
+        transform: translateY(0px) rotate(45deg);
+      }
+
+      .navigation-container.active .nav-toggle .hamburger::after {
+        transform: translateY(0px) rotate(-45deg);
+        /* box shadownya nanti menyatu dengan konten */
+        box-shadow: 0 0 #333;
+      }
+
+      .navigation-container.active .navigation ul {
+        display: flex;
+        width: 100%;
+      }
+    }
+    main {
+      section#Hero {
+        .hero-container {
+          .top {
+            flex-direction: column;
+            .left {
+              h1 {
+                font-size: 2rem;
+              }
+            }
+          }
+          .bottom {
+            display: none;
+          }
+        }
+      }
+      section#Services {
+        .services-container {
+          .services--details {
+            flex-direction: column;
+            margin: 0;
+          }
+        }
+      }
+      section#Dedicated {
+      }
+      section#Work {
+        .work-container {
+          .work--details {
+            flex-direction: column;
+          }
+        }
+      }
+    }
+    footer {
+      .footer-container {
+        h1 {
+          font-size: 2rem;
+        }
+        .bottom-nav {
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          gap: 32px;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 576px) {
+}
+@media screen and (max-width: 350px) {
+}
